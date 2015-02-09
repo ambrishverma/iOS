@@ -1,3 +1,6 @@
+Time Spent: 6 hours. 
+Walk-through gif for the demo: Ambrish-RottenTomatoes-Demo.gif
+
 Features
 Required
 

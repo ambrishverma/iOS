@@ -41,14 +41,22 @@ class MoviesDetailViewController: UIViewController {
         let movieDescription = self.movieDictionary!["synopsis"] as String
         
         var movieDescriptionView = UIView(frame: CGRectFromString(movieDescription))
-   //     movieDescriptionView.
+
+        let mylabel = UILabel(frame: CGRectMake(0, 300, 300, 300))
+        mylabel.opaque = true
+        mylabel.preferredMaxLayoutWidth = 500
         
-        //movieDescriptionView.backgroundColor = UIColor.whiteColor()
+        mylabel.text = movieDescription
+
+        movieDescriptionView = mylabel as UIView
         myView.addSubview(movieDescriptionView)
-        
+  
+  //      var myLayer = CALayer()
+ //       myLayer.visibleRect(frame: CGRectMake(100, 100, 300, 300))
+    //    myView.displayLayer(myLayer!)
+      
         
         self.view = myView
-        
     }
     
     
