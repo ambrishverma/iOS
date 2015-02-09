@@ -12,10 +12,12 @@ class MoviesDetailViewController: UIViewController {
     
     var movieDictionary: NSDictionary?
 
-    /*
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+      var movieName = movieDictionary!["title"] as NSString
+      println("\(movieName)")
         
     }
     
@@ -26,12 +28,31 @@ class MoviesDetailViewController: UIViewController {
     
     
     override func loadView() {
-        let myView = UIView(frame: CGRectZero)
-        myView.backgroundColor = UIColor.blueColor()
+        var myView = UIImageView(frame: CGRectZero)
+        
+        // Add Movie image
+        let movieImageTile = self.movieDictionary!["posters"] as NSDictionary
+        let thumbNailUrlString = movieImageTile["detailed"] as String
+        let detailedUrlString = thumbNailUrlString.stringByReplacingOccurrencesOfString("tmb", withString: "ori", options: NSStringCompareOptions.LiteralSearch, range: nil)
+        let detailedlUrl = NSURL(string: detailedUrlString)
+        let data = NSData(contentsOfURL: detailedlUrl!)
+        myView.image = UIImage(data: data!)
+
+        let movieDescription = self.movieDictionary!["synopsis"] as String
+        
+        var movieDescriptionView = UIView(frame: CGRectFromString(movieDescription))
+   //     movieDescriptionView.
+        
+        //movieDescriptionView.backgroundColor = UIColor.whiteColor()
+        myView.addSubview(movieDescriptionView)
+        
+        
         self.view = myView
+        
     }
     
     
+    /*
     
     // MARK: - Navigation
 

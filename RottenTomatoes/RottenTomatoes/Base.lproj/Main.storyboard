@@ -38,7 +38,7 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Movie Cell" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hfx-E4-SYV">
                                             <rect key="frame" x="109" y="3" width="382" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -80,7 +80,6 @@
                                     <outlet property="MovieImageView" destination="fgV-bD-lVE" id="AVx-Xi-z6s"/>
                                     <outlet property="MovieRatingLabel" destination="Vji-Ii-k6p" id="NaD-iV-gpy"/>
                                     <outlet property="MovieYearLabel" destination="PHL-Yf-eCw" id="UG9-Vt-wjY"/>
-                                    <segue destination="VSL-js-mU9" kind="show" id="EOm-9p-zLG"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -94,24 +93,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BvL-78-hV9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="849" y="306"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="J2x-go-7QE">
-            <objects>
-                <viewController id="VSL-js-mU9" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="A7L-wO-jnG"/>
-                        <viewControllerLayoutGuide type="bottom" id="VaK-aF-sW1"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="HIY-gC-39L">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.37099390580000002" blue="0.32828107560000003" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9tz-ha-d3A" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1547" y="306"/>
         </scene>
     </scenes>
 </document>
