@@ -97,13 +97,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         filterButton.tintColor = UIColor.whiteColor();
         filterButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Helvetica Neue", size: 11)!], forState: UIControlState.Normal)
         self.navigationItem.leftBarButtonItem = filterButton;
-  /*
-        // map view button
-        var mapButton = UIBarButtonItem(title: "Map", style: UIBarButtonItemStyle.Plain, target: self, action: "onMapButton");
-        mapButton.tintColor = UIColor.whiteColor();
-        mapButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "System", size: 11)!], forState: UIControlState.Normal);
-        self.navigationItem.rightBarButtonItem = mapButton;
-    */
         
         self.navigationController?.navigationBar.barTintColor = UIColor.redColor();
         
@@ -116,14 +109,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         paramDictionary = filters;
         searchYelpContent(businessText, param: filters);
     }
-    /*
-    func onMapButton(){
-        var mvc = self.storyboard?.instantiateViewControllerWithIdentifier("mapVC") as MapViewController;
-        mvc.businesses = self.businesses;
-        var navC = UINavigationController(rootViewController: mvc);
-        presentViewController(navC, animated: true, completion: nil);
-    }
-    */
     func onFilterButton(){
         var fvc = self.storyboard?.instantiateViewControllerWithIdentifier("filterVC") as FiltersViewController;
         fvc.delegate = self;
@@ -144,19 +129,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return UITableViewAutomaticDimension;
     }
-    /*
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var dvc = self.storyboard?.instantiateViewControllerWithIdentifier("detailsVC") as DetailsViewController;
-        dvc.client = self.client;
-        if(filteredBusiness.count > 0){
-            dvc.business = self.filteredBusiness[indexPath.row];
-        }else{
-            dvc.business = self.businesses[indexPath.row];
-        }
-        var nvc = UINavigationController(rootViewController: dvc);
-        presentViewController(nvc, animated: true, completion: nil);
-    }
-    */
+
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             if (businesses.count>0){
                 if(filteredBusiness.count > 0){
