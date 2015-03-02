@@ -8,10 +8,22 @@
 
 import UIKit
 
+protocol TweetsViewControllerDelegate: class{
+    
+    func toggleMenu()
+    
+}
+
+
 class TweetsViewController: UIViewController , UITableViewDelegate, UITableViewDataSource, TweetTableViewCellDelegate, DetailsViewControllerDelegate, NewTweetViewControllerDelegate{
+    
+    weak var delegate: TweetsViewControllerDelegate?
+
     var sTweet: Tweet?
     var tweets = [Tweet]()
     
+  //  var menuViewCtrl: MenuViewController?
+
     var refreshControl: UIRefreshControl!
     
     @IBOutlet weak var tableView: UITableView!
@@ -21,8 +33,10 @@ class TweetsViewController: UIViewController , UITableViewDelegate, UITableViewD
         
         refreshControl = UIRefreshControl()
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 40/255, green: 177/255, blue: 255/255, alpha: 1.0)
+        
         titleLabel()
         logoutButtonItem()
+        // menuButtonItem()
         newButtonItem()
         
         self.tableView.dataSource = self
@@ -83,6 +97,14 @@ class TweetsViewController: UIViewController , UITableViewDelegate, UITableViewD
         self.navigationItem.rightBarButtonItem = newTweetButton
     }
     
+    func menuButtonItem(){
+        var menuButton = UIBarButtonItem(title: "Menu", style: UIBarButtonItemStyle.Plain, target: self, action: "onMenu")
+        menuButton.tintColor = UIColor.whiteColor()
+        menuButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Helvetica Neue", size: 12)!], forState: UIControlState.Normal)
+        self.navigationItem.rightBarButtonItem = menuButton
+    }
+
+    
     func logoutButtonItem(){
         var logoutButton = UIBarButtonItem(title: "Logout", style: UIBarButtonItemStyle.Plain, target: self, action: "onLogout")
         logoutButton.tintColor = UIColor.whiteColor()
@@ -137,6 +159,10 @@ class TweetsViewController: UIViewController , UITableViewDelegate, UITableViewD
         var nvc = UINavigationController(rootViewController: newTweetVC)
         
         presentViewController(nvc, animated: true, completion: nil)
+    }
+    
+    func onMenu() {
+        println("Menu")
     }
     
     func didPostNewTweet(newTweetViewController: NewTweetViewController, reload: Bool) {

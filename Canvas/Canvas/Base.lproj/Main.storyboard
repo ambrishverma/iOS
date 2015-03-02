@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6750" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6735"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Canvas" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OK5-QQ-HDS" userLabel="TrayView">
+                                <rect key="frame" x="0.0" y="317" width="320" height="251"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dead" translatesAutoresizingMaskIntoConstraints="NO" id="3Zy-8i-hMy">
+                                        <rect key="frame" x="19" y="56" width="81" height="73"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="excited" translatesAutoresizingMaskIntoConstraints="NO" id="RrB-1s-f7l">
+                                        <rect key="frame" x="120" y="56" width="81" height="73"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="happy" translatesAutoresizingMaskIntoConstraints="NO" id="QTk-ZN-Adm">
+                                        <rect key="frame" x="215" y="56" width="81" height="73"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sad" translatesAutoresizingMaskIntoConstraints="NO" id="LZM-HN-ezw">
+                                        <rect key="frame" x="19" y="154" width="81" height="73"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tongue" translatesAutoresizingMaskIntoConstraints="NO" id="aR7-fb-ChG">
+                                        <rect key="frame" x="120" y="154" width="81" height="73"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wink" translatesAutoresizingMaskIntoConstraints="NO" id="gLW-4l-TId">
+                                        <rect key="frame" x="215" y="154" width="81" height="73"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="down_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="DNX-d8-xf2">
+                                        <rect key="frame" x="128" y="8" width="65" height="28"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="dtr-9M-9L1" appends="YES" id="oUm-cc-Ei1"/>
+                                        </connections>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.65924873737373735" green="0.65924873737373735" blue="0.65924873737373735" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="trayArrow" destination="dtr-9M-9L1" id="w80-wh-pUR"/>
+                        <outlet property="trayView" destination="OK5-QQ-HDS" id="2f9-qV-Zew"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="dtr-9M-9L1">
+                    <connections>
+                        <action selector="dragTray:" destination="vXZ-lx-hvc" id="QLh-se-wJu"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="149" y="301"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="dead" width="60" height="60"/>
+        <image name="down_arrow" width="20" height="14"/>
+        <image name="excited" width="60" height="60"/>
+        <image name="happy" width="60" height="60"/>
+        <image name="sad" width="60" height="60"/>
+        <image name="tongue" width="60" height="60"/>
+        <image name="wink" width="60" height="60"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
